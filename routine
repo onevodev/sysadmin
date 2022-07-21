@@ -5,7 +5,7 @@
 
 echo "###" && date && echo "###"
 
-if [ $(which apt) ]; then
+if [ $(which apt 2>/dev/null ) ]; then
 	apt update									&& \
 	apt list --upgradable						&& \
 	apt full-upgrade -y							&& \
@@ -13,9 +13,8 @@ if [ $(which apt) ]; then
 	apt update && apt full-upgrade -y			&& \
 	apt clean && apt autoclean
 
-elif [ $(which xbps-install) ]; then
+elif [ $(which xbps-install 2>/dev/null ) ]; then
 	xbps-install -Suvy && xbps-remove -fOovy	&& \
 	xbps-install -Suvy && xbps-remove -fOovy	&& \
 	xbps-install -Suvy && xbps-remove -fOovy
-
 fi
