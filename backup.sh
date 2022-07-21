@@ -8,8 +8,8 @@ bak_dir="/srv/bak"
 
 unset bak_files
 
-bak_files+="/etc/grafana/grafana.ini "
-bak_files+="/etc/telegraf/telegraf.conf"
+bak_files+=" "
+bak_files+=" "
 
 # backup data
 tar cfzv $bak_dir/bak-config-$(hostname)-$(date -I).tgz $bak_files
