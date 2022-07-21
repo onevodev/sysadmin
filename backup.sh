@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# cron it with
+# 5 4 * * * /root/tools/backup.sh 2>&1 | tee -a /var/log/sys-backup.log
+
+bak_dir="/srv/bak"
+[[ -d $bak_dir ]] || exit 1
+
+unset bak_files
+
+bak_files+="/etc/grafana/grafana.ini "
+bak_files+="/etc/telegraf/telegraf.conf"
+
+# backup data
+tar cfzv $bak_dir/bak-config-$(hostname)-$(date -I).tgz $bak_files
+
+# clear all but last 3
+cd $bak_dir && [[ -f $(ls | head -n -3) ]] && rm -v $(ls | head -n -3)
+
+chmod 500 $bak_dir && chmod 400 $bak_dir/*

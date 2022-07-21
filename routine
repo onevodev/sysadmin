@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# cron it with
+# 5 4 * * 0 /usr/local/bin/routine 2>&1 | tee -a /var/log/sysupgrade.log
+
+echo "###" && date && echo "###"
+
+if [ $(which apt) ]; then
+	apt update									&& \
+	apt list --upgradable						&& \
+	apt full-upgrade -y							&& \
+	apt update && apt upgrade -y				&& \
+	apt update && apt full-upgrade -y			&& \
+	apt clean && apt autoclean
+
+elif [ $(which xbps-install) ]; then
+	xbps-install -Suvy && xbps-remove -fOovy	&& \
+	xbps-install -Suvy && xbps-remove -fOovy	&& \
+	xbps-install -Suvy && xbps-remove -fOovy
+
+fi
