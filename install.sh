@@ -2,10 +2,6 @@
 
 read -p "This script assumes that you are inside the 'sysadmin' folder. Press ENTER to continue: "
 
-# install routine
-ln -sfv ./routine /usr/local/bin
-chmod 700 /usr/local/bin/routine
-
 # install tools
 tools_dir="/root/tools"
 [[ -d $tools_dir ]] || mkdir -m 700 $tools_dir
@@ -14,7 +10,6 @@ install -m 700 ./backup.sh $tools_dir/
 
 # symlink
 ln -sfv $tools_dir/routine /usr/local/bin
-
 
 # echo crontab
 echo "
