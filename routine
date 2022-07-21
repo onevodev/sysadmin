@@ -16,5 +16,6 @@ if [ $(which apt 2>/dev/null ) ]; then
 elif [ $(which xbps-install 2>/dev/null ) ]; then
 	xbps-install -Suvy && xbps-remove -fOovy	&& \
 	xbps-install -Suvy && xbps-remove -fOovy	&& \
-	xbps-install -Suvy && xbps-remove -fOovy
+	xbps-install -Suvy && xbps-remove -fOovy	&& \
+	vkpurge list
 fi
