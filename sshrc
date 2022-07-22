@@ -1,0 +1,16 @@
+#!/bin/bash
+echo
+[ $(which fortune 2>/dev/null ) ] && fortune # | cowsay -f $(ls /usr/share/cows/ | shuf -n 1)
+echo
+
+
+echo "$(uptime)"
+tmux list-sessions >/dev/null 2>&1
+if [ "$?" = "0" ] ; then
+  echo "Running tmux sessions:"
+  echo "$(tmux list-sessions)"
+else
+  echo "No running tmux sessions."
+fi
+
+echo

@@ -7,6 +7,7 @@ tools_dir="/root/tools"
 [[ -d $tools_dir ]] || mkdir -m 700 $tools_dir
 install -m 700 ./routine $tools_dir/
 install -m 700 ./backup.sh $tools_dir/
+install -m 644 ./sshrc /etc/ssh/
 
 # symlink
 ln -sfv $tools_dir/routine /usr/local/bin
