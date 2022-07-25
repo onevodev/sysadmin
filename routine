@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # cron it with
-# 5 4 * * 0 /usr/local/bin/routine 2>&1 | tee -a /var/log/sysupgrade.log
+#  5 4 * * 0 /usr/local/bin/routine >> /var/log/sysupgrade.log 2>&1
 
 echo "###" && date && echo "###"
 

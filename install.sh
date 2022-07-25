@@ -17,9 +17,9 @@ echo "
 Sample crontab for sysupgrade and sysbackup:
 
   # backup once a day
-  0 4 * * * /root/tools/backup.sh 2>&1 | tee -a /var/log/sys-backup.log
+  0 4 * * * /root/tools/backup.sh >> /var/log/sys-backup.log 2>&1
 
   # update once a week
-  5 4 * * 0 /usr/local/bin/routine 2>&1 | tee -a /var/log/sysupgrade.log
+  5 4 * * 0 /usr/local/bin/routine >> /var/log/sysupgrade.log 2>&1
 
 "

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # cron it with
-# 5 4 * * * /root/tools/backup.sh 2>&1 | tee -a /var/log/sys-backup.log
+# 0 4 * * * /root/tools/backup.sh >> /var/log/sys-backup.log 2>&1
 
 bak_dir="/srv/bak"
 [[ -d $bak_dir ]] || exit 1
