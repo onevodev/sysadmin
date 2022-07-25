@@ -7,10 +7,10 @@ bak_dir="/srv/bak"
 [[ -d $bak_dir ]] || exit 1
 
 bak_file=".2backup"
-[[ -f $bak_file ]] || exit 1
+[[ -f $bak_dir/$bak_file ]] || exit 1
 
 unset bak_files
-bak_files=$(cat $bak_file)
+bak_files=$(cat $bak_dir/$bak_file)
 
 # backup data
 tar cfzv $bak_dir/bak-config-$(hostname)-$(date -I).tgz $bak_files
