@@ -3,6 +3,8 @@
 # cron it with
 # 0 4 * * * /root/tools/backup.sh >> /var/log/sys-backup.log 2>&1
 
+echo "###" && date && echo "###"
+
 bak_dir="/srv/bak"
 [[ -d $bak_dir ]] || exit 1
 
