@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-read -p "This script assumes that you are inside the 'sysadmin' folder. Press ENTER to continue: "
+echo "This script assumes that you are inside the 'sysadmin' folder."
+! [[ "$1" == "-y" ]] && read -p "Press ENTER to continue: "
 
 # install tools
 tools_dir="/root/tools"
@@ -21,5 +22,8 @@ Sample crontab for sysupgrade and sysbackup:
 
   # update once a week
   5 4 * * 0 /usr/local/bin/routine >> /var/log/sysupgrade.log 2>&1
+
+  # sync repo updates
+  0 3 * * * /root/tools/update.sh >> /var/log/sys-syncrepo.log 2>&1
 
 "
