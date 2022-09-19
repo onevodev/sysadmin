@@ -4,7 +4,7 @@ let's see if this is useful in any way.
 
 *Quick explanation:*
 
-* **`add-cronjob.sh`** :
+* `add-cronjob.sh` :
 	- adds its argument to current user's crontab.
 * `backup.sh` :
 	- makes a tgz of files/directories included in `$BAK_DIR/.2backup` inside `$BAK_DIR`.
