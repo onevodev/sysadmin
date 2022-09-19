@@ -4,16 +4,16 @@ echo "This script assumes that you are inside the 'sysadmin' folder."
 ! [[ "$1" == "-y" ]] && read -p "Press ENTER to continue: "
 
 # install tools
-tools_dir="/root/tools"
-[[ -d $tools_dir ]] || mkdir -m 700 $tools_dir
-install -m 700 ./routine $tools_dir/
-install -m 700 ./backup.sh $tools_dir/
-install -m 700 ./update.sh $tools_dir/
-install -m 700 ./renew-certs-LE.sh $tools_dir/
+TOOLS_DIR="/root/tools"
+[[ -d $TOOLS_DIR ]] || mkdir -m 700 $TOOLS_DIR
+install -m 700 ./routine $TOOLS_DIR/
+install -m 700 ./backup.sh $TOOLS_DIR/
+install -m 700 ./update.sh $TOOLS_DIR/
+install -m 700 ./renew-certs-LE.sh $TOOLS_DIR/
 install -m 644 ./sshrc /etc/ssh/
 
 # symlink
-ln -sfv $tools_dir/routine /usr/local/bin
+ln -sfv $TOOLS_DIR/routine /usr/local/bin
 
 # echo crontab
 echo "
