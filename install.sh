@@ -9,6 +9,7 @@ tools_dir="/root/tools"
 install -m 700 ./routine $tools_dir/
 install -m 700 ./backup.sh $tools_dir/
 install -m 700 ./update.sh $tools_dir/
+install -m 700 ./renew-certs-LE.sh $tools_dir/
 install -m 644 ./sshrc /etc/ssh/
 
 # symlink
