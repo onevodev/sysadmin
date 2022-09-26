@@ -13,7 +13,7 @@ let's see if this is useful in any way.
 * `renew-certs-LE.sh` :
 	- runs a certbot renew, automatically adding and removing a ufw rule for *tcp/80* for certbot
 * `routine` :
-	- makes a full system upgrade *[supported distros: Debian/apt based distros, Void Linux]*
+	- makes a full system upgrade *[supported package managers: apt, xbps, dnf]*
 * `sshrc` :
 	- custom sshrc for system status, and optional fortune cookie
 * `update.sh` :
