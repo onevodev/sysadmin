@@ -23,7 +23,6 @@ elif [ $(which dnf 2>/dev/null ) ]; then
 	dnf check-upgrade && dnf upgrade -y	&& \
 	dnf autoremove -y && dnf upgrade -y	&& \
 	dnf clean all
-
 # apk based
 elif [ $(which apk 2>/dev/null ) ]; then
 	apk update && apk upgrade	&& \
