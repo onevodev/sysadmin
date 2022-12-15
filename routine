@@ -20,9 +20,9 @@ elif [ $(which xbps-install 2>/dev/null ) ]; then
 	vkpurge list
 # dnf based
 elif [ $(which dnf 2>/dev/null ) ]; then
-	dnf check-upgrade && dnf upgrade -y	&& \
+	dnf upgrade --refresh -y	&& \
 	dnf autoremove -y && dnf upgrade -y	&& \
-	dnf clean all
+	dnf clean metadata && dnf clean expire-cache
 # apk based
 elif [ $(which apk 2>/dev/null ) ]; then
 	apk update && apk upgrade	&& \
