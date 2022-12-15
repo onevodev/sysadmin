@@ -20,6 +20,7 @@ elif [ $(which xbps-install 2>/dev/null ) ]; then
 	vkpurge list
 # dnf based
 elif [ $(which dnf 2>/dev/null ) ]; then
+	dnf update --refresh -y	&& \
 	dnf upgrade --refresh -y	&& \
 	dnf autoremove -y && dnf upgrade -y	&& \
 	dnf clean metadata && dnf clean expire-cache
