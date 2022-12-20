@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # cron it with
 #  5 4 * * 0 /usr/local/bin/routine >> /var/log/sysupgrade.log 2>&1
